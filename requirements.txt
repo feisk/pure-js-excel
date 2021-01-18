@@ -1,0 +1,14 @@
+ - create Webpack template (imports/exports)
+    Babel
+    Scss
+    Eslint
+    Modes
+        Dev
+            - Dev server
+            - SourceMaos
+            - Eslint
+            - Not minified js & css
+        Prod
+            - Minified code
+    
+ - implement Git flow process
