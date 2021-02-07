@@ -1,0 +1,20 @@
+{
+  "parser": "babel-eslint",
+  "rules": {
+    "no-unused-vars": "warn",
+    "object-curly-spacing": "off"
+  },
+  "extends": [
+    "eslint:recommended",
+    "google",
+    "prettier"
+  ],
+  "env": {
+    "es6": true,
+    "browser": true,
+    "node": true
+  },
+  "plugins": [
+    "prettier"
+  ]
+}
