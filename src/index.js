@@ -1,1 +1,3 @@
-console.log('test');
+import './style.scss';
+
+console.log('index.js');
