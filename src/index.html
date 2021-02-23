@@ -3,11 +3,35 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
     <title>Pure JS Excel</title>
   </head>
 
   <body>
-    <p>lol kek</p>
-    <div id="app" class="container"></div>
+    <main>
+      <div id="app" class="container">
+        <div class="excel">
+          <div class="excel__header">
+            <input type="text" class="input" value="новая таблица" />
+
+            <div class="btn-block">
+              <button class="btn">
+                <span class="material-icons"> delete </span>
+              </button>
+
+              <button class="btn">
+                <span class="material-icons"> exit_to_app </span>
+              </button>
+            </div>
+          </div>
+
+          <div class="excel__toolbar"></div>
+
+          <div class="excel__formula"></div>
+
+          <div class="excel__table"></div>
+        </div>
+      </div>
+    </main>
   </body>
 </html>

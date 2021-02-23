@@ -1,0 +1,26 @@
+@mixin button($color: green) {
+  display: flex;
+  position: relative;
+  min-height: 26px;
+  min-width: 26px;
+  padding: 3px;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.75);
+  background-color: transparent;
+  transition: 100ms ease background-color;
+  border-radius: 2px;
+
+  &:active,
+  &.active {
+    color: $color;
+  }
+
+  &:hover {
+    background-color: #eee;
+    cursor: pointer;
+  }
+
+  & > .material-icons {
+    font-size: 20px;
+  }
+}

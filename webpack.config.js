@@ -3,7 +3,6 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const PrettierPlugin = require('prettier-webpack-plugin');
 
 const isDev = process.env.NODE_ENV === 'development';
 const isProd = process.env.NODE_ENV === 'production';
@@ -59,7 +58,10 @@ module.exports = {
   },
   devtool: isDev ? 'source-map' : false,
   devServer: {
-    port: 9000,
+    port: 8000,
+    openPage: '',
+    static: true,
+    hot: isDev,
   },
   target: isDev ? 'web' : 'browserslist',
   plugins: [
@@ -74,7 +76,7 @@ module.exports = {
       },
     }),
     new MiniCssExtractPlugin({ filename: getFileName('css') }),
-    new PrettierPlugin(),
+
     new ESLintPlugin(),
   ],
   module: {
