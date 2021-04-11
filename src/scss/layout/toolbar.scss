@@ -1,2 +1,7 @@
 .excel__toolbar {
+  @include topBlock($top_block_height);
+
+  .btn {
+    @include button;
+  }
 }

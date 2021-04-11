@@ -1,3 +1,15 @@
+@mixin topBlock($topOffset: 0) {
+  position: absolute;
+  top: $topOffset;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  height: $top_block_height;
+  padding: 4px;
+  border-bottom: 1px solid $border_color;
+}
+
 @mixin button($color: green) {
   display: flex;
   position: relative;
@@ -13,6 +25,7 @@
   &:active,
   &.active {
     color: $color;
+    background-color: rgba($color, 0.125);
   }
 
   &:hover {
@@ -22,5 +35,28 @@
 
   & > .material-icons {
     font-size: 20px;
+  }
+}
+
+@mixin input($withHover: true) {
+  padding: 2px 7px;
+  font-size: 18px;
+  line-height: 22px;
+  color: #000;
+  border: 1px solid transparent;
+  border-radius: 2px;
+
+  @if $withHover {
+    transition: 100ms ease border-color;
+
+    &:hover {
+      border-color: #e5e5e5;
+    }
+
+    &:focus {
+      border: 2px solid #1a73e8;
+      margin: -1px;
+      border-radius: 4px;
+    }
   }
 }

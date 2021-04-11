@@ -1,2 +1,32 @@
 .excel__formula {
+  position: relative;
+  @include topBlock($top_block_height * 2);
+
+  .info {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    margin: auto;
+    padding-right: 3px;
+    font-size: 18px;
+    font-style: italic;
+    text-transform: uppercase;
+    color: #757575;
+    background-color: #f7f7f7;
+    border-right: 1px solid $border_color;
+    pointer-events: none;
+  }
+
+  .input {
+    @include input($withHover: false);
+    width: 100%;
+    padding-left: 56px;
+    caret-color: #757575;
+    pointer-events: auto;
+  }
 }
