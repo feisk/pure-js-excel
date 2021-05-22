@@ -20,6 +20,7 @@
     background-color: #f7f7f7;
     border-right: 1px solid $border_color;
     pointer-events: none;
+    transition: color 75ms ease, background-color 75ms ease;
   }
 
   .input {
@@ -28,5 +29,10 @@
     padding-left: 56px;
     caret-color: #757575;
     pointer-events: auto;
+
+    &:focus ~ .info {
+      color: #000;
+      background-color: #eaeaea;
+    }
   }
 }
