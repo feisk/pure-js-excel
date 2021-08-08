@@ -1,2 +1,74 @@
 .excel__table {
+  @include topBlock($top_block_height * 3, 100%);
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0;
+  border: none;
+  overflow-x: auto;
+
+  .row {
+    position: relative;
+    display: flex;
+    min-width: 100%;
+    height: $row-height;
+    padding-left: $info-ceil-width;
+
+    &-info {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 2;
+
+      &-inner {
+        position: fixed;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: $info-ceil-width;
+        height: $row-height;
+        border-bottom: 1px solid $border_color;
+        border-right: 1px solid $border_color;
+        background-color: #fff;
+      }
+    }
+
+    &-data {
+      display: flex;
+      flex-grow: 1;
+    }
+
+    .column {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f8f9fa;
+      width: $ceil-width;
+      min-width: $info-ceil-width;
+      border-bottom: 1px solid $border_color;
+      border-right: 1px solid $border_color;
+    }
+
+    .cell {
+      width: calc(#{$ceil-width} + 1px);
+      min-width: $info-ceil-width;
+      padding: 4px;
+      border-top: 1px solid transparent;
+      border-left: 1px solid transparent;
+      border-bottom: 1px solid $border-color-light;
+      border-right: 1px solid $border-color-light;
+      transition: 100ms ease border-color;
+      margin: -1px 0 0 -1px;
+
+      &:hover {
+        border-color: $border-color;
+      }
+
+      &:focus,
+      &.selected {
+        position: relative;
+        z-index: 1;
+        border-color: $border-color-active;
+      }
+    }
+  }
 }

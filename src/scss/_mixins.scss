@@ -1,11 +1,11 @@
-@mixin topBlock($topOffset: 0) {
+@mixin topBlock($topOffset: 0, $height: $top_block_height) {
   position: absolute;
   top: $topOffset;
   left: 0;
   right: 0;
   display: flex;
   align-items: center;
-  height: $top_block_height;
+  height: $height;
   padding: 4px;
   border-bottom: 1px solid $border_color;
 }
@@ -50,11 +50,11 @@
     transition: 100ms ease border-color;
 
     &:hover {
-      border-color: #e5e5e5;
+      border-color: $border-color-light;
     }
 
     &:focus {
-      border: 2px solid #1a73e8;
+      border: 2px solid $border-color-active;
       margin: -1px;
       border-radius: 4px;
     }
